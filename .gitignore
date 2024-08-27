@@ -1,0 +1,13 @@
+**/vectorstores/*
+**/private/students.json
+.ragatouille/*
+*/__pycache__/*
+.chainlit/translations/
+code/.chainlit/translations/
+storage/logs/*
+vectorstores/*
+**/apps/*/storage/logs/*
+**/apps/*/private/*
+*.log
+**/.files/*
+.env
