@@ -2,7 +2,9 @@
 
 ## Overview
 
-This repository contains an LLM-powered chatbot designed for the [DS701: Tools for Data Science](https://tools4ds.github.io/fa2024/) course at Boston University. The chatbot serves as an interactive learning assistant, helping students with course-related queries, explanations of concepts, and guidance on data science tools.
+This repository contains an LLM-based chatbot designed for the [DS701: Tools for Data Science](https://tools4ds.github.io/fa2024/) course at Boston University. The chatbot serves as an interactive learning assistant, helping students with course-related queries, explanations of concepts, and guidance on data science tools. It is powered by [edubotics-core](https://github.com/edubotics-ai/edubotics-core) a package of modules for data loading, vector store creation and management.
+
+The chatbot will be available on HuggingFace Spaces soon. Lecture slides are available [here].
 
 ## Features
 
@@ -12,18 +14,50 @@ This repository contains an LLM-powered chatbot designed for the [DS701: Tools f
 - Practice problem suggestions and explanations
 - Course syllabus and schedule information
 
-## Getting Started
+## Getting Started Locally
 
-To use the chatbot, follow these steps:
+To run the chatbot locally, follow these steps:
 
 1. Clone this repository
-2. Install the required dependencies (see `requirements.txt`)
-3. Set up the necessary environment variables (see `.env.example`)
-4. Run the chatbot application
+
+   `git clone https://github.com/tools4ds/ds701-tutor.git`
+
+2. Set up your Python environment
+
+   a. Using venv (Python's built-in virtual environment):
+
+   ```python
+   python -m venv ds701_env
+   source ds701_env/bin/activate  # On Windows, use: ds701_env\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+   b. Using Conda:
+
+   ```python
+   conda create --name ds701_env python=3.9
+   conda activate ds701_env
+   conda install --file requirements.txt
+   ```
+
+Note: Make sure to use Python 3.9 or later.
+
+3. Install dependencies
+
+   `pip install edubotics-core`
+
+4. Run the chatbot
+
+   ```python
+    cd apps/ai-tutor
+    python app.py
+   ```
+
+   and navigate to localhost:8000 in your browser.
 
 ## Usage
 
-Students can interact with the chatbot through a web interface or command-line application. Simply type your questions or select from predefined topics to get started.
+Students can interact with the chatbot through the web interface.
 
 Example queries:
 
@@ -33,7 +67,13 @@ Example queries:
 
 ## Contributing
 
-We welcome contributions from students and instructors to improve the chatbot's knowledge base and functionality. Please see `CONTRIBUTING.md` for guidelines on how to submit improvements or report issues.
+We welcome contributions from the community to enhance the DS701 AI Tutor. Whether you're a student, instructor, or developer, your input is valuable. Here's how you can contribute:
+
+1. Fork the repository and create your feature branch.
+2. Make your changes, ensuring they align with the project's goals.
+3. Submit a pull request with a clear description of your improvements.
+
+For more detailed information on the contribution process, please refer to our `CONTRIBUTING.md` file (unavailable yet).
 
 ## Privacy and Data Handling
 
