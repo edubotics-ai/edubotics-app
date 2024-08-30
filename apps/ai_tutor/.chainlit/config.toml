@@ -53,10 +53,10 @@ edit_message = true
 
 [UI]
 # Name of the assistant.
-name = "AI Tutor"
+name = "DS701 AI Tutor"
 
 # Description of the assistant. This is used for HTML tags.
-# description = ""
+description = "Your AI tutor for DS701: Tools for Data Science. Here to assist you with course content, answer questions, and provide guidance on data science concepts."
 
 # Large size content are by default collapsed for a cleaner ui
 default_collapse_content = true
@@ -65,7 +65,7 @@ default_collapse_content = true
 cot = "hidden"
 
 # Link to your github repo. This will add a github button in the UI's header.
-github = "https://github.com/edubotics-ai/edubot-core"
+github = "https://github.com/tools4ds/ds701-tutor"
 
 # Specify a CSS file that can be used to customize the user interface.
 # The CSS file can be served from the public directory or via an external link.
