@@ -1,3 +1,13 @@
+---
+title: DS701 AI Tutor
+description: An LLM based class tutor with RAG for Tools4DS course
+emoji: 🎓
+colorFrom: red
+colorTo: green
+sdk: docker
+app_port: 7860
+---
+
 # DS701: Tools for Data Science - Education Chatbot
 
 ## Overview
