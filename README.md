@@ -4,7 +4,7 @@
 
 This repository contains an LLM-based chatbot designed for the [DS701: Tools for Data Science](https://tools4ds.github.io/fa2024/) course at Boston University. The chatbot serves as an interactive learning assistant, helping students with course-related queries, explanations of concepts, and guidance on data science tools. It is powered by [edubotics-core](https://github.com/edubotics-ai/edubotics-core) a package of modules for data loading, vector store creation and management.
 
-The chatbot will be available on HuggingFace Spaces soon. Lecture slides are available [here].
+The chatbot will be available on HuggingFace Spaces soon. Lecture slides are available [here](https://tools4ds.github.io/DS701-Course-Notes/).
 
 ## Features
 
@@ -46,7 +46,9 @@ Note: Make sure to use Python 3.9 or later.
 
    `pip install edubotics-core`
 
-4. Run the chatbot
+4. Set up environment variables. See `apps/ai_tutor/.env.example` for reference.
+
+5. Run the chatbot
 
    ```python
     cd apps/ai-tutor

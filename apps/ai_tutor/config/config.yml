@@ -3,12 +3,12 @@ log_chunk_dir: 'storage/logs/chunks' # str
 device: 'cpu' # str [cuda, cpu]
 
 vectorstore:
-  load_from_HF: True # bool
+  load_from_HF: False # bool
   reparse_files: True # bool
   data_path: 'storage/data' # str
   url_file_path: 'storage/data/urls.txt' # str
   expand_urls: True # bool
-  db_option : 'RAGatouille' # str [FAISS, Chroma, RAGatouille, RAPTOR]
+  db_option : 'FAISS' # str [FAISS, Chroma, RAGatouille, RAPTOR]
   db_path : 'vectorstores' # str
   model : 'sentence-transformers/all-MiniLM-L6-v2' # str [sentence-transformers/all-MiniLM-L6-v2, text-embedding-ada-002']
   search_top_k : 3 # int
@@ -39,7 +39,7 @@ llm_params:
     filename: 'tinyllama-1.1b-chat-v1.0.Q5_0.gguf' # Specific name of gguf file in the repo
     model_path: 'storage/models/tinyllama-1.1b-chat-v1.0.Q5_0.gguf' # Path to the model file
   stream: False # bool
-  pdf_reader: 'gpt' # str [llama, pymupdf, gpt]
+  pdf_reader: 'pymupdf' # str [llama, pymupdf, gpt]
 
 chat_logging:
   log_chat: True # bool
