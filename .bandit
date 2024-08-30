@@ -1,2 +1,2 @@
 [bandit]
-exclude = B104
+skips = B104
