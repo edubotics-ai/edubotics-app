@@ -25,6 +25,9 @@ from edubotics_core.chat_processor.helpers import get_user_details, update_user_
 from config.config_manager import config_manager
 import hashlib
 
+import uvicorn
+import argparse
+
 # set config
 config = config_manager.get_config().dict()
 
@@ -385,6 +388,10 @@ async def get_tokens_left(request: Request):
 mount_chainlit(app=app, target="chainlit_app.py", path=CHAINLIT_PATH)
 
 if __name__ == "__main__":
-    import uvicorn
+    parser = argparse.ArgumentParser(description="Run the AI Tutor application")
+    parser.add_argument("--host", default="0.0.0.0", help="Host to run the server on")
+    parser.add_argument("--port", type=int, default=7860,
+                        help="Port to run the server on")
+    args = parser.parse_args()
 
-    uvicorn.run(app, host="0.0.0.0", port=7860)
+    uvicorn.run(app, host=args.host, port=args.port)
