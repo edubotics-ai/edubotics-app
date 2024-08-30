@@ -18,4 +18,4 @@ jobs:
       - name: Deploy Production (main) to HuggingFace
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://faridkarimli:$HF_TOKEN@huggingface.co/spaces/edubotics/dl4ds_tutor main
+        run: git push --force https://faridkarimli:$HF_TOKEN@huggingface.co/spaces/edubotics/dl4ds_tutor
