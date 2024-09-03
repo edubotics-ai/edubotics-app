@@ -12,4 +12,3 @@
 .env
 *.pyc
 venv/
-apps
