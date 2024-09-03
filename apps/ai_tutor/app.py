@@ -390,8 +390,9 @@ mount_chainlit(app=app, target="chainlit_app.py", path=CHAINLIT_PATH)
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the AI Tutor application")
     parser.add_argument("--host", default="0.0.0.0", help="Host to run the server on")
-    parser.add_argument("--port", type=int, default=7860,
-                        help="Port to run the server on")
+    parser.add_argument(
+        "--port", type=int, default=7860, help="Port to run the server on"
+    )
     args = parser.parse_args()
 
     uvicorn.run(app, host=args.host, port=args.port)
