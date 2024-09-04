@@ -23,7 +23,9 @@ async def check_user_cooldown(
         last_message_time = datetime.fromisoformat(last_message_time_str).replace(
             tzinfo=timezone.utc
         )
-    except Exception as e:  # this probably means the user has never sent a message before
+    except (
+        Exception
+    ) as e:  # this probably means the user has never sent a message before
         return False, None
 
     current_time = datetime.fromisoformat(current_time).replace(tzinfo=timezone.utc)
