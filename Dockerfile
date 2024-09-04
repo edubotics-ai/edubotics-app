@@ -3,8 +3,8 @@ FROM python:3.11
 WORKDIR /code
 
 RUN pip install --upgrade pip
-
 RUN pip install --no-cache-dir edubotics_core
+RUN pip install chainlit==1.1.402
 
 COPY . /code
 
