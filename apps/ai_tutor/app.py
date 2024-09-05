@@ -240,8 +240,6 @@ async def cooldown(request: Request):
     cooldown, cooldown_end_time = await check_user_cooldown(
         user_details, current_datetime, COOLDOWN_TIME, TOKENS_LEFT, REGEN_TIME
     )
-    print(f"User in cooldown: {cooldown}")
-    print(f"Cooldown end time: {cooldown_end_time}")
     if cooldown and "admin" not in get_user_role(user_info["email"]):
         return templates.TemplateResponse(
             "cooldown.html",

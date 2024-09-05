@@ -31,3 +31,19 @@ a[href*='https://github.com/Chainlit/chainlit']
   max-height: 45px; /* Ensure the height remains consistent */
   max-width: 45px; /* Ensure the width remains consistent */
 }
+
+.MuiDialogContent-root.css-1ty026z {
+  color: #000000;
+}
+
+.MuiDialogContent-root.css-1ty026z p {
+  color: red;
+}
+
+.MuiDialogContent-root.css-1ty026z h6 {
+  color: #000000;
+}
+
+.css-dbukeo {
+  display: none !important;
+}
