@@ -227,38 +227,28 @@ class Chatbot:
         """
         Set starter messages for the chatbot.
         """
-        # Return Starters only if the chat is new
-
-        try:
-            thread = cl_data._data_layer.get_thread(
-                cl.context.session.thread_id
-            )  # see if the thread has any steps
-            if thread.steps or len(thread.steps) > 0:
-                return None
-        except Exception as e:
-            print(e)
-            return [
-                cl.Starter(
-                    label="What is this course about?",
-                    message="What is this course about? I'm not sure I'm in the right class.",
-                    icon="/public/assets/images/starter_icons/adv-screen-recorder-svgrepo-com.svg",
-                ),
-                cl.Starter(
-                    label="Where is the schedule?",
-                    message="When are the lectures? I can't find the schedule.",
-                    icon="/public/assets/images/starter_icons/alarmy-svgrepo-com.svg",
-                ),
-                cl.Starter(
-                    label="When are office hours?",
-                    message="When are the office hours for this course?",
-                    icon="/public/assets/images/starter_icons/calendar-samsung-17-svgrepo-com.svg",
-                ),
-                cl.Starter(
-                    label="Explain KMeans",
-                    message="I didn't understand the math behind KMeans, could you explain it?",
-                    icon="/public/assets/images/starter_icons/acastusphoton-svgrepo-com.svg",
-                ),
-            ]
+        return [
+            cl.Starter(
+                label="What is this course about?",
+                message="What is this course about? I'm not sure I'm in the right class.",
+                icon="/public/assets/images/starter_icons/adv-screen-recorder-svgrepo-com.svg",
+            ),
+            cl.Starter(
+                label="Where is the schedule?",
+                message="When are the lectures? I can't find the schedule.",
+                icon="/public/assets/images/starter_icons/alarmy-svgrepo-com.svg",
+            ),
+            cl.Starter(
+                label="When are office hours?",
+                message="When are the office hours for this course?",
+                icon="/public/assets/images/starter_icons/calendar-samsung-17-svgrepo-com.svg",
+            ),
+            cl.Starter(
+                label="Explain KMeans",
+                message="I didn't understand the math behind KMeans, could you explain it?",
+                icon="/public/assets/images/starter_icons/acastusphoton-svgrepo-com.svg",
+            ),
+        ]
 
     def rename(self, orig_author: str):
         """
@@ -505,7 +495,7 @@ class Chatbot:
         await self.start()
 
     @cl.header_auth_callback
-    def header_auth_callback(headers: dict) -> Optional[cl.User]:
+    async def header_auth_callback(headers: dict) -> Optional[cl.User]:
         # try: # TODO: Add try-except block after testing
         # TODO: Implement to get the user information from the headers (not the cookie)
         cookie = headers.get("cookie")  # gets back a str
@@ -521,10 +511,14 @@ class Chatbot:
         ).decode()
         decoded_user_info = json.loads(decoded_user_info)
 
+        user_id = decoded_user_info["literalai_info"]["identifier"]
+        user_info = await get_user_details(user_id)
+        metadata = user_info.metadata
+
         return cl.User(
             id=decoded_user_info["literalai_info"]["id"],
             identifier=decoded_user_info["literalai_info"]["identifier"],
-            metadata=decoded_user_info["literalai_info"]["metadata"],
+            metadata=metadata,
         )
 
     async def on_follow_up(self, action: cl.Action):
