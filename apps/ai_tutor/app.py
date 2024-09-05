@@ -277,6 +277,10 @@ async def post_signin(request: Request):
         user_details.metadata["tokens_left"] = (
             TOKENS_LEFT  # set the number of tokens left for the new user
         )
+    if "role" not in user_details.metadata:
+        user_details.metadata["role"] = get_user_role(user_info["email"])
+    if "tokens_left" not in user_details.metadata:
+        user_details.metadata["tokens_left"] = TOKENS_LEFT
     if "last_message_time" not in user_details.metadata:
         user_details.metadata["last_message_time"] = current_datetime
     if "all_time_tokens_allocated" not in user_details.metadata:
@@ -389,7 +393,7 @@ mount_chainlit(app=app, target="chainlit_app.py", path=CHAINLIT_PATH)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the AI Tutor application")
-    parser.add_argument("--host", default="0.0.0.0", help="Host to run the server on")
+    parser.add_argument("--host", default="localhost", help="Host to run the server on")
     parser.add_argument(
         "--port", type=int, default=7860, help="Port to run the server on"
     )
