@@ -14,7 +14,7 @@ app_port: 7860
 
 This repository contains an LLM-based chatbot designed for the [DS701: Tools for Data Science](https://tools4ds.github.io/fa2024/) course at Boston University. The chatbot serves as an interactive learning assistant, helping students with course-related queries, explanations of concepts, and guidance on data science tools. It is powered by [edubotics-core](https://github.com/edubotics-ai/edubotics-core) a package of modules for data loading, vector store creation and management.
 
-The chatbot will be available on HuggingFace Spaces soon. Lecture slides are available [here](https://tools4ds.github.io/DS701-Course-Notes/).
+The chatbot is in preview on HuggingFace [here](https://tools4ds-ai-tutor.hf.space). Lecture slides are available [here](https://tools4ds.github.io/DS701-Course-Notes/).
 
 ## Features
 
