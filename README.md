@@ -12,11 +12,11 @@ pip install edubotics-core
 
 For detailed instructions on the initial setup (setting up .env file, required Keys, etc), please refer to our [documentation](http://docs.edubotics.ai).
 
-### Templates
+## Templates
 
 To get started, check out the templates located in the `apps/` directory.
 
-### Config Files
+## Config Files
 
 - **config.yml**: This file controls various chatbot settings such as the default vector store and architecture type.
 - **project_config.yml**: Use this file to customize settings specific to your project.
