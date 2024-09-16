@@ -1,5 +1,8 @@
 # Edubotics-Core Setup
 
+This repository is an example of how to build an application that incorporates the `edubotics-core` package. We suggest you fork this repository and
+then adapt it your application domain.
+
 ## Installation
 
 To install `edubotics-core`, run the following command:
