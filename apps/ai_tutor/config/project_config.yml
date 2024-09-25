@@ -35,7 +35,7 @@ metadata:
 token_config:
   cooldown_time: 60
   regen_time: 180
-  tokens_left: 2000
+  tokens_left: 50000
   all_time_tokens_allocated: 1000000
 
 content:
