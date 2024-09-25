@@ -44,7 +44,7 @@ class LocalLLMParams(BaseModel):
     filename: str = (
         "tinyllama-1.1b-chat-v1.0.Q5_0.gguf"  # Specific name of gguf file in the repo
     )
-    model_path: str = (
+    path: str = (
         "storage/models/tinyllama-1.1b-chat-v1.0.Q5_0.gguf"  # Path to the model file
     )
 
