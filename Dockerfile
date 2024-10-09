@@ -4,8 +4,8 @@ WORKDIR /code
 
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir edubotics_core
-RUN pip install chainlit==1.1.402
-RUN pip install literalai==0.0.607
+RUN pip install chainlit
+RUN pip install literalai
 
 COPY . /code
 
