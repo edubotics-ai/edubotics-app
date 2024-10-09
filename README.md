@@ -7,6 +7,10 @@
     <em>Edubotics AI - Empower Education with AI: Create Intelligent Chatbots Quickly and Efficiently</em>
 </p>
 <p align="center">   
+  <a href="https://github.com/edubotics-ai/edubotics-app/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/edubotics-ai/edubotics-app.svg">
+  </a>
+  <img src="https://img.shields.io/github/stars/edubotics-ai/edubotics-app.svg">
   <a href="https://discord.com/channels/1293271626036805653">
     <img alt="Discord" src="https://img.shields.io/discord/1293271626036805653?style=flat&logo=discord&label=Discord">
   </a>
