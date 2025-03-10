@@ -40,7 +40,7 @@ YOU = "User"
 ERROR = "Error"
 
 # set config
-config = config_manager.get_config().dict()
+config = config_manager.get_config()
 
 
 async def setup_data_layer():
