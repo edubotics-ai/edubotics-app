@@ -1,6 +1,4 @@
-import sys
 from .config_manager import config_manager
-from pprint import pprint
 
 config = config_manager.config
 

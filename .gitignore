@@ -1,6 +1,6 @@
 venv/
 venv/*
-*.pyc
+**/*.pyc
 
 **/vectorstores/*
 **/private/students.json
