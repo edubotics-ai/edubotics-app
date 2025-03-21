@@ -15,4 +15,5 @@ vectorstores/*
 **/.files/*
 .env
 
+*.pyc
 
