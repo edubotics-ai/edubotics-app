@@ -24,7 +24,7 @@ from helpers import (
 from edubotics_core.chat_processor.helpers import get_user_details, update_user_info
 from config.config_manager import config_manager
 import hashlib
-
+from pprint import pprint
 # set config
 config = config_manager.get_config()
 
@@ -39,6 +39,12 @@ REGEN_TIME = config["token_config"]["regen_time"]
 GOOGLE_CLIENT_ID = OAUTH_GOOGLE_CLIENT_ID
 GOOGLE_CLIENT_SECRET = OAUTH_GOOGLE_CLIENT_SECRET
 GOOGLE_REDIRECT_URI = f"{CHAINLIT_URL}/auth/oauth/google/callback"
+
+CLASS_METADATA = {
+    "class_name": config["metadata"]["class_name"],
+    "class_number": config["metadata"]["class_number"],
+    "instructor_name": config["metadata"]["instructor_name"],
+}
 
 app = FastAPI()
 app.mount("/public", StaticFiles(directory="public"), name="public")
@@ -137,7 +143,12 @@ async def login_page(request: Request):
         return RedirectResponse("/post-signin")
     return templates.TemplateResponse(
         "login.html",
-        {"request": request, "GITHUB_REPO": GITHUB_REPO, "DOCS_WEBSITE": DOCS_WEBSITE},
+        {
+            "request": request,
+            "GITHUB_REPO": GITHUB_REPO,
+            "DOCS_WEBSITE": DOCS_WEBSITE,
+            "CLASS_METADATA": CLASS_METADATA,
+        },
     )
 
 
