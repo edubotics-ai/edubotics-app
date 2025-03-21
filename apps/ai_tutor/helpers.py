@@ -47,9 +47,13 @@ async def reset_tokens_for_user(user_info, TOKENS_LEFT, REGEN_TIME):
     user_info = convert_to_dict(user_info)
     last_message_time_str = user_info["metadata"].get("last_message_time")
 
-    last_message_time = datetime.fromisoformat(last_message_time_str).replace(
-        tzinfo=timezone.utc
-    )
+    try:
+        last_message_time = datetime.fromisoformat(last_message_time_str).replace(
+            tzinfo=timezone.utc
+        )
+    except Exception:  # this probably means the user has never sent a message before
+        last_message_time = datetime.min.replace(tzinfo=timezone.utc)
+
     current_time = datetime.fromisoformat(get_time()).replace(tzinfo=timezone.utc)
 
     # Calculate the elapsed time since the last message
